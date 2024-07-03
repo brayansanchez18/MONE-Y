@@ -240,14 +240,14 @@
               </li>
 
               <li class="nav-item">
-                <a href="users.html" class="nav-link">
+                <a href="cobros.html" class="nav-link">
                   <i class="nav-icon fas fa-cash-register"></i>
                   <p>Cobros</p>
                 </a>
               </li>
 
               <li class="nav-item">
-                <a href="users.html" class="nav-link">
+                <a href="presetamos.html" class="nav-link">
                   <i class="nav-icon fas fa-hand-holding-usd"></i>
                   <p>Prestamos</p>
                 </a>
@@ -342,7 +342,7 @@
               <button
                 class="btn btn-primary"
                 data-toggle="modal"
-                data-target="#modalAgregarProducto"
+                data-target="#modalAgregarPrestatario"
               >
                 Agregar Prestatario <i class="ml-2 fas fa-user-plus"></i>
               </button>
@@ -373,7 +373,7 @@
                 <tbody>
                   <tr>
                     <td>1</td>
-                    <td>Brayan Emanuel<br />Sanchez Ramirez</td>
+                    <td>Brayan Emanuel Sanchez Ramirez</td>
                     <td>
                       <img
                         class="img-circle"
@@ -382,7 +382,7 @@
                       />
                     </td>
                     <td>Metepec</td>
-                    <td>Brayan Emanuel<br />Sanchez Ramirez</td>
+                    <td>Brayan Emanuel Sanchez Ramirez</td>
                     <td>12345678</td>
                     <td>Masculino</td>
                     <td>
@@ -392,26 +392,24 @@
                     <td>7299145194</td>
                     <td>brayan.sanchez.contacto@gmail.com</td>
                     <td>
-                      <button class="btn btn-xs btn-success">Activo</button>
+                      <button class="btn btn-xs btn-danger">Activo</button>
                     </td>
                     <td>MX$12,400.00</td>
                     <td>24-06-2024 12:12:12</td>
                     <td>
                       <div class="btn-group">
-                        <button
-                          class="btn btn-info"
-                          data-toggle="modal"
-                          data-target="#modalEditarPrestatario"
-                        >
-                          <i class="fas fa-cash-register"></i>
-                        </button>
-                        <button
+                        <a href="cobros.html">
+                          <button class="btn btn-info" tooltip="cobrar">
+                            <i class="fas fa-cash-register"></i>
+                          </button>
+                        </a>
+                        <!-- <button
                           class="btn btn-success"
                           data-toggle="modal"
                           data-target="#modalEditarPrestatario"
                         >
                           <i class="fas fa-hand-holding-usd"></i>
-                        </button>
+                        </button> -->
                         <button
                           class="btn btn-primary"
                           data-toggle="modal"
@@ -434,38 +432,38 @@
                   </tr>
                   <tr>
                     <td>2</td>
-                    <td>Brayan Emanuel<br />Sanchez Ramirez</td>
+                    <td>Jazmin Montserrath Santiago Jilote</td>
                     <td>
                       <img
                         class="img-circle"
-                        src="dist/img/avatar.png"
+                        src="dist/img/avatar3.png"
                         width="60px"
                       />
                     </td>
-                    <td>Metepec</td>
-                    <td>Brayan Emanuel<br />Sanchez Ramirez</td>
+                    <td>San Mateo Atenco</td>
+                    <td>Jazmin Montserrath Santiago Jilote</td>
                     <td>12345678</td>
                     <td>Masculino</td>
                     <td>
-                      C. Chapultepec #10 INT C, Col. San Jeronimo Chicahualco
-                      C.P. 52170, Metepec, Mexico
+                      C. Hermegildo Galeana #409, Barr. La Concepcion C.P.
+                      52105, San Mateo Atenco, Mexico
                     </td>
                     <td>7299145194</td>
                     <td>brayan.sanchez.contacto@gmail.com</td>
                     <td>
-                      <button class="btn btn-xs btn-danger">Inactivo</button>
+                      <button class="btn btn-xs btn-success">Inactivo</button>
                     </td>
-                    <td>MX$12,400.00</td>
+                    <td>MX$0.00</td>
                     <td>24-06-2024 12:12:12</td>
                     <td>
                       <div class="btn-group">
-                        <button
+                        <!-- <button
                           class="btn btn-info"
                           data-toggle="modal"
                           data-target="#modalEditarPrestatario"
                         >
                           <i class="fas fa-cash-register"></i>
-                        </button>
+                        </button> -->
                         <button
                           class="btn btn-success"
                           data-toggle="modal"
@@ -503,6 +501,380 @@
         <!-- /.content -->
       </div>
       <!-- /.content-wrapper -->
+
+      <!-- -------------------------------------------------------------------------- */
+      /*                            MODAL AGREGAR PRESTATARIO                            */
+      /* -------------------------------------------------------------------------- -->
+
+      <div
+        class="modal fade"
+        id="modalAgregarPrestatario"
+        tabindex="-1"
+        role="dialog"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <form role="form" method="post" enctype="multipart/form-data">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">
+                  Agregar Prestatario
+                </h5>
+                <button
+                  type="button"
+                  class="close"
+                  data-dismiss="modal"
+                  aria-label="Close"
+                >
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+
+              <div class="modal-body">
+                <div class="input-group mb-2">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">
+                      <i class="fa fa-user"></i
+                    ></span>
+                  </div>
+                  <input
+                    type="text"
+                    class="form-control input-lg"
+                    name="nuevoNombre"
+                    placeholder="Ingresar nombre"
+                    required
+                  />
+                </div>
+
+                <div class="input-group mb-2">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1"
+                      ><i class="fa fa-map-marker" aria-hidden="true"></i>
+                    </span>
+                  </div>
+                  <select class="form-control input-lg" name="nuevoPerfil">
+                    <option value="">Selecionar Zona</option>
+                    <option value="metepec">Metepec</option>
+                    <option value="san mateo atenco">San Mateo Atenco</option>
+                  </select>
+                </div>
+
+                <div class="input-group mb-2">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1"
+                      ><i class="fa fa-users"></i
+                    ></span>
+                  </div>
+                  <select class="form-control input-lg" name="nuevoPerfil">
+                    <option value="">Selecionar Promotor</option>
+                    <option value="Jazmin Montserrath Santiago Jilote">
+                      Jazmin Montserrath Santiago Jilote
+                    </option>
+                    <option value="Brayan Emanuel Sanchez Ramirez">
+                      Brayan Emanuel Sanchez Ramirez
+                    </option>
+                  </select>
+                </div>
+
+                <div class="input-group mb-2">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1"
+                      ><i class="fa fa-id-card" aria-hidden="true"></i>
+                    </span>
+                  </div>
+                  <input
+                    type="email"
+                    class="form-control input-lg"
+                    name="nuevoEmail"
+                    placeholder="ID del Prestatario"
+                    id="nuevoEmail"
+                    required
+                  />
+                </div>
+
+                <div class="input-group mb-2">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1"
+                      ><i class="fa fa-venus-mars" aria-hidden="true"></i>
+                    </span>
+                  </div>
+                  <select class="form-control input-lg" name="nuevoPerfil">
+                    <option value="">Sexo</option>
+                    <option value="Masculino">Masculino</option>
+                    <option value="Femenino">Femenino</option>
+                    <option value="Otro">Otro</option>
+                    <option value="Sin Espesificar">Sin Espesificar</option>
+                  </select>
+                </div>
+
+                <div class="input-group mb-2">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1"
+                      ><i class="fa fa-map" aria-hidden="true"></i>
+                    </span>
+                  </div>
+                  <input
+                    type="email"
+                    class="form-control input-lg"
+                    name="nuevoEmail"
+                    placeholder="Direccion"
+                    id="nuevoEmail"
+                    required
+                  />
+                </div>
+
+                <div class="input-group mb-2">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1"
+                      ><i class="fa fa-phone" aria-hidden="true"></i>
+                    </span>
+                  </div>
+                  <input
+                    type="email"
+                    class="form-control input-lg"
+                    name="nuevoEmail"
+                    placeholder="Telefono"
+                    id="nuevoEmail"
+                    required
+                  />
+                </div>
+
+                <div class="input-group mb-2">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1"
+                      ><i class="fa fa-envelope"></i
+                    ></span>
+                  </div>
+                  <input
+                    type="email"
+                    class="form-control input-lg"
+                    name="nuevoEmail"
+                    placeholder="Ingresar Email"
+                    id="nuevoEmail"
+                    required
+                  />
+                </div>
+
+                <div class="mb-2">
+                  <div class="panel">SUBIR FOTO</div>
+                  <input
+                    type="file"
+                    class="form-control input-lg nuevaFoto"
+                    name="nuevaFoto"
+                  />
+                  <p class="help-block">Peso máximo de la foto 4MB</p>
+                  <img
+                    src="dist/img/avatar3.png"
+                    class="img-thumbnail previsualizar"
+                    width="200px"
+                  />
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-dismiss="modal"
+                >
+                  Cerrar
+                </button>
+                <button type="submit" class="btn btn-primary">
+                  Crear Prestatario
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- ----------------------- End of MODAL AGREGAR PRESTATARIO ---------------------- -->
+
+      <!-- -------------------------------------------------------------------------- */
+      /*                            MODAL EDITAR PRESTATARIO                            */
+      /* -------------------------------------------------------------------------- -->
+
+      <div
+        class="modal fade"
+        id="modalEditarPrestatario"
+        tabindex="-1"
+        role="dialog"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <form role="form" method="post" enctype="multipart/form-data">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">
+                  Editar Prestatario
+                </h5>
+                <button
+                  type="button"
+                  class="close"
+                  data-dismiss="modal"
+                  aria-label="Close"
+                >
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+
+              <div class="modal-body">
+                <div class="input-group mb-2">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">
+                      <i class="fa fa-user"></i
+                    ></span>
+                  </div>
+                  <input
+                    type="text"
+                    class="form-control input-lg"
+                    name="nuevoNombre"
+                    placeholder="Ingresar nombre"
+                    required
+                  />
+                </div>
+
+                <div class="input-group mb-2">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1"
+                      ><i class="fa fa-map-marker" aria-hidden="true"></i>
+                    </span>
+                  </div>
+                  <select class="form-control input-lg" name="nuevoPerfil">
+                    <option value="">Selecionar Zona</option>
+                    <option value="metepec">Metepec</option>
+                    <option value="san mateo atenco">San Mateo Atenco</option>
+                  </select>
+                </div>
+
+                <div class="input-group mb-2">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1"
+                      ><i class="fa fa-users"></i
+                    ></span>
+                  </div>
+                  <select class="form-control input-lg" name="nuevoPerfil">
+                    <option value="">Selecionar Promotor</option>
+                    <option value="Jazmin Montserrath Santiago Jilote">
+                      Jazmin Montserrath Santiago Jilote
+                    </option>
+                    <option value="Brayan Emanuel Sanchez Ramirez">
+                      Brayan Emanuel Sanchez Ramirez
+                    </option>
+                  </select>
+                </div>
+
+                <div class="input-group mb-2">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1"
+                      ><i class="fa fa-id-card" aria-hidden="true"></i>
+                    </span>
+                  </div>
+                  <input
+                    type="email"
+                    class="form-control input-lg"
+                    name="nuevoEmail"
+                    placeholder="ID del Prestatario"
+                    id="nuevoEmail"
+                    required
+                  />
+                </div>
+
+                <div class="input-group mb-2">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1"
+                      ><i class="fa fa-venus-mars" aria-hidden="true"></i>
+                    </span>
+                  </div>
+                  <select class="form-control input-lg" name="nuevoPerfil">
+                    <option value="">Sexo</option>
+                    <option value="Masculino">Masculino</option>
+                    <option value="Femenino">Femenino</option>
+                    <option value="Otro">Otro</option>
+                    <option value="Sin Espesificar">Sin Espesificar</option>
+                  </select>
+                </div>
+
+                <div class="input-group mb-2">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1"
+                      ><i class="fa fa-map" aria-hidden="true"></i>
+                    </span>
+                  </div>
+                  <input
+                    type="email"
+                    class="form-control input-lg"
+                    name="nuevoEmail"
+                    placeholder="Direccion"
+                    id="nuevoEmail"
+                    required
+                  />
+                </div>
+
+                <div class="input-group mb-2">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1"
+                      ><i class="fa fa-phone" aria-hidden="true"></i>
+                    </span>
+                  </div>
+                  <input
+                    type="email"
+                    class="form-control input-lg"
+                    name="nuevoEmail"
+                    placeholder="Telefono"
+                    id="nuevoEmail"
+                    required
+                  />
+                </div>
+
+                <div class="input-group mb-2">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1"
+                      ><i class="fa fa-envelope"></i
+                    ></span>
+                  </div>
+                  <input
+                    type="email"
+                    class="form-control input-lg"
+                    name="nuevoEmail"
+                    placeholder="Ingresar Email"
+                    id="nuevoEmail"
+                    required
+                  />
+                </div>
+
+                <div class="mb-2">
+                  <div class="panel">SUBIR FOTO</div>
+                  <input
+                    type="file"
+                    class="form-control input-lg nuevaFoto"
+                    name="nuevaFoto"
+                  />
+                  <p class="help-block">Peso máximo de la foto 4MB</p>
+                  <img
+                    src="dist/img/avatar3.png"
+                    class="img-thumbnail previsualizar"
+                    width="200px"
+                  />
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-dismiss="modal"
+                >
+                  Cerrar
+                </button>
+                <button type="submit" class="btn btn-primary">
+                  Editar Prestatario
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- ----------------------- End of MODAL EDITAR PRESTATARIO ---------------------- -->
 
       <footer class="main-footer">
         <div class="float-right d-none d-sm-block"><b>Version</b> 3.2.0</div>

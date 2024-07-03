@@ -31,3 +31,7 @@ $(".tablaProductos").DataTable({
 });
 
 /* -------------- End of CARGAR LA TABLA DINÁMICA DE PRODUCTOS -------------- */
+
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip();
+});
