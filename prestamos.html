@@ -12,8 +12,30 @@
     />
     <!-- Font Awesome -->
     <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css" />
+
+    <link
+      rel="stylesheet"
+      href="plugins/datatables-bs4/css/dataTables.bootstrap4.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="plugins/datatables-responsive/css/responsive.bootstrap4.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="plugins/datatables-buttons/css/buttons.bootstrap4.min.css"
+    />
     <!-- Theme style -->
     <link rel="stylesheet" href="dist/css/adminlte.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.38.0/css/tempusdominus-bootstrap-4.min.css"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.38.0/js/tempusdominus-bootstrap-4.min.js"
+      crossorigin="anonymous"
+    ></script>
 
     <script src="plugins/jquery/jquery.min.js"></script>
     <script src="plugins/jquery-ui/jquery-ui.min.js"></script>
@@ -332,7 +354,7 @@
               <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
                   <li class="breadcrumb-item"><a href="#">Inicio</a></li>
-                  <li class="breadcrumb-item active">Cobros</li>
+                  <li class="breadcrumb-item active">Prestamos</li>
                 </ol>
               </div>
             </div>
@@ -341,7 +363,508 @@
         </section>
 
         <!-- Main content -->
-        <section class="content"></section>
+        <section class="content">
+          <div class="row">
+            <!--=====================================
+      EL FORMULARIO
+      ======================================-->
+
+            <div class="col-lg-5 col-xs-12">
+              <div class="card card-success card-outline">
+                <div class="card-header">
+                  <h3 class="title"><small>Nuevo prestamo</small></h3>
+                </div>
+                <form role="form" method="post" class="formularioVenta">
+                  <div class="card-body">
+                    <div class="box">
+                      <!-- ------------------------- NOMBRE PRESTATARIO -------------------------- -->
+                      <div class="input-group mt-2 mb-2">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text" id="basic-addon1"
+                            ><i class="fa fa-user"></i
+                          ></span>
+                        </div>
+                        <input
+                          type="text"
+                          class="form-control input-lg"
+                          name="PrestamosNombrePrestatario"
+                          placeholder="Nombre"
+                          id="PrestamosNombrePrestatario"
+                          readonly="readonly"
+                          value="Jazmin Montserrath Santiago Jilote"
+                          required
+                        />
+                      </div>
+
+                      <!-- ------------------------------ ZONA Y ID ------------------------------ -->
+                      <div class="row">
+                        <div class="input-group mt-2 mb-2 col-12 col-md-6">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1"
+                              ><i class="fa fa-map-marker"></i
+                            ></span>
+                          </div>
+                          <input
+                            type="text"
+                            class="form-control input-lg"
+                            name="PrestamosZonaPrestatario"
+                            placeholder="Zona"
+                            id="PrestamosZonaPrestatario"
+                            readonly="readonly"
+                            value="San Mateo Atenco"
+                            required
+                          />
+                        </div>
+                        <div class="input-group mt-2 mb-2 col-12 col-md-6">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1"
+                              ><i class="fa fa-id-card"></i
+                            ></span>
+                          </div>
+                          <input
+                            type="text"
+                            class="form-control input-lg"
+                            name="PrestamosDniPrestatario"
+                            placeholder="ID"
+                            id="PrestamosDniPrestatario"
+                            readonly="readonly"
+                            value="12345678"
+                            required
+                          />
+                        </div>
+                      </div>
+
+                      <!-- ---------------------- SEXO Y FECHA DE NACMIENTO ---------------------- -->
+                      <div class="row">
+                        <div class="input-group mt-2 mb-2 col-12 col-md-6">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1"
+                              ><i class="fa fa-venus-mars"></i
+                            ></span>
+                          </div>
+                          <input
+                            type="text"
+                            class="form-control input-lg"
+                            name="PrestamosSexoPrestatario"
+                            placeholder="Sexo"
+                            id="PrestamosSexoPrestatario"
+                            readonly="readonly"
+                            value="Femenino"
+                            required
+                          />
+                        </div>
+                        <div class="input-group mt-2 mb-2 col-12 col-md-6">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1"
+                              ><i class="fa fa-birthday-cake"></i
+                            ></span>
+                          </div>
+                          <input
+                            type="text"
+                            class="form-control input-lg"
+                            name="PrestamosDateNacmientoPrestatario"
+                            placeholder="Fecha de Nacimento"
+                            id="PrestamosDateNacmientoPrestatario"
+                            readonly="readonly"
+                            value="1980-11-02"
+                            required
+                          />
+                        </div>
+                      </div>
+
+                      <!-- --------------- NUMERO TELEFONIICO Y CORREO ELECTRONICO --------------- -->
+                      <div class="row">
+                        <div class="input-group mt-2 mb-2 col-12 col-md-6">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1"
+                              ><i class="fa fa-phone"></i
+                            ></span>
+                          </div>
+                          <input
+                            type="text"
+                            class="form-control input-lg"
+                            name="PrestamosTelefonoPrestatario"
+                            placeholder="Numero telefonco"
+                            id="PrestamosTelefonoPrestatario"
+                            readonly="readonly"
+                            value="7295924900"
+                            required
+                          />
+                        </div>
+                        <div class="input-group mt-2 mb-2 col-12 col-md-6">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1"
+                              ><i class="fa fa-envelope"></i
+                            ></span>
+                          </div>
+                          <input
+                            type="text"
+                            class="form-control input-lg"
+                            name="PrestamosMailPrestatario"
+                            placeholder="Correo Electronico"
+                            id="PrestamosMailPrestatario"
+                            readonly="readonly"
+                            value="brayan.sanchez.contacto@gmal.com"
+                            required
+                          />
+                        </div>
+                      </div>
+
+                      <!-- ------------------------------ DIRECCION ------------------------------ -->
+                      <div class="input-group mt-2 mb-2">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text" id="basic-addon1"
+                            ><i class="fa fa-map"></i
+                          ></span>
+                        </div>
+                        <textarea
+                          class="form-control"
+                          name="PrestamosDireccionPrestatario"
+                          id="PrestamosDireccionPrestatario"
+                          placeholder="Direccion"
+                          readonly
+                          required
+                        >
+                        C. Hermegildo Galeana #409, Barr. La Concepcion C.P. 52105, San Mateo Atenco, Mexico </textarea
+                        >
+                      </div>
+
+                      <!-- ------------------------- PERSONA DE CONTACTO ------------------------- -->
+                      <div class="input-group mt-3 mb-2">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text" id="basic-addon1"
+                            ><i class="fa fa-address-book"></i
+                          ></span>
+                        </div>
+                        <input
+                          type="text"
+                          class="form-control input-lg"
+                          name="PrestamosContactoPrestatario"
+                          placeholder="Contacto"
+                          id="PrestamosContactoPrestatario"
+                          readonly="readonly"
+                          value="Lorem Ipsum (7295924900)"
+                          required
+                        />
+                      </div>
+
+                      <!-- ------------------------- FECHA DE DESEMBOLSO ------------------------- -->
+                      <div class="row">
+                        <div
+                          class="col-12 col-md-6 input-group date mt-2 mb-2"
+                          id="datetimepicker4"
+                          data-target-input="nearest"
+                        >
+                          <div
+                            class="input-group-append"
+                            data-target="#datetimepicker4"
+                            data-toggle="datetimepicker"
+                          >
+                            <div class="input-group-text">
+                              <i class="fa fa-calendar"></i>
+                            </div>
+                          </div>
+                          <input
+                            type="text"
+                            class="form-control datetimepicker-input"
+                            data-target="#datetimepicker4"
+                            placeholder="Fecha de desembolso"
+                          />
+                        </div>
+
+                        <script type="text/javascript">
+                          $(function () {
+                            $("#datetimepicker4").datetimepicker({
+                              format: "L",
+                            });
+                          });
+                        </script>
+
+                        <div class="col-12 col-md-6 input-group mt-2 mb-2">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1"
+                              ><i class="fa fa-calendar" aria-hidden="true"></i
+                            ></span>
+                          </div>
+                          <select
+                            class="form-control input-lg"
+                            name="PlazoPrestamo"
+                          >
+                            <option value="">Plazo</option>
+                            <option value="Semanal">Semanal</option>
+                            <option value="Quincenal">Quincenal</option>
+                            <option value="Mensual">Mensual</option>
+                          </select>
+                        </div>
+                      </div>
+
+                      <!-- --------------------- INTERES Y MONTO DE PRESTAMO --------------------- -->
+                      <div class="row">
+                        <div class="col-12 col-md-6 input-group mt-2 mb-2">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1"
+                              ><i class="fa fa-percent" aria-hidden="true"></i>
+                            </span>
+                          </div>
+                          <select
+                            class="form-control input-lg"
+                            name="PlazoPrestamo"
+                          >
+                            <option value="">Interes</option>
+                            <option value="civil">Civil (15%)</option>
+                            <option value="serPublico">
+                              Servidor Publico (10%)
+                            </option>
+                            <option value="Otro">Otro</option>
+                          </select>
+                        </div>
+
+                        <div class="input-group mt-2 mb-2 col-12 col-md-6">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1"
+                              ><i class="nav-icon fas fa-hand-holding-usd"></i>
+                            </span>
+                          </div>
+                          <input
+                            type="number"
+                            class="form-control input-lg"
+                            name="PrestamosMailPrestatario"
+                            placeholder="Monto"
+                            id="PrestamosMailPrestatario"
+                            required
+                          />
+                        </div>
+                      </div>
+
+                      <!-- ------------------------ REFERENCIA Y DETALLE ------------------------- -->
+                      <div class="row">
+                        <div class="input-group mt-2 mb-2 col-12 col-md-6">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1"
+                              ><i class="fa fa-asterisk" aria-hidden="true"></i
+                            ></span>
+                          </div>
+                          <input
+                            type="text"
+                            class="form-control input-lg"
+                            name="PrestamosTelefonoPrestatario"
+                            placeholder="Referencia"
+                            id="PrestamosTelefonoPrestatario"
+                            required
+                          />
+                        </div>
+                        <div class="input-group mt-2 mb-2 col-12 col-md-6">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1"
+                              ><i
+                                class="fa fa-info-circle"
+                                aria-hidden="true"
+                              ></i
+                            ></span>
+                          </div>
+                          <input
+                            type="text"
+                            class="form-control input-lg"
+                            name="PrestamosMailPrestatario"
+                            placeholder="Detalle"
+                            id="PrestamosMailPrestatario"
+                            required
+                          />
+                        </div>
+                      </div>
+
+                      <button class="btn btn-secondary float-right mt-3 mb-2">
+                        Calcular Cuotas
+                      </button>
+                      <br />
+
+                      <!--=====================================
+                ENTRADA PARA AGREGAR PRODUCTO
+                ======================================-->
+
+                      <!-- <div class="form-group row nuevoProducto"></div>
+
+                      <input
+                        type="hidden"
+                        id="listaProductos"
+                        name="listaProductos"
+                      /> -->
+
+                      <!--=====================================
+                BOTÓN PARA AGREGAR PRODUCTO
+                ======================================-->
+
+                      <!-- <button
+                        type="button"
+                        class="btn btn-default hidden-lg btnAgregarProducto"
+                      >
+                        Agregar producto
+                      </button> -->
+                      <div class="row mt-5">
+                        <!--=====================================
+                  ENTRADA IMPUESTOS Y TOTAL
+                  ======================================-->
+
+                        <div class="col-xs-8 float-right">
+                          <table
+                            class="table table-striped tablaAmertizaciones"
+                          >
+                            <thead>
+                              <tr>
+                                <th>#</th>
+                                <th>Fecha</th>
+                                <th>Couta</th>
+                                <th>Capital</th>
+                                <th>Interes</th>
+                                <th>Saldo</th>
+                              </tr>
+                            </thead>
+
+                            <tbody>
+                              <tr>
+                                <td>1</td>
+                                <td>23/Jul/24</td>
+                                <td>$700.00</td>
+                                <td>$500.00</td>
+                                <td>$200.00</td>
+                                <td>1,500.00</td>
+                              </tr>
+                              <tr>
+                                <td>2</td>
+                                <td>07/Ago/2024</td>
+                                <td>$720.00</td>
+                                <td>$500.00</td>
+                                <td>$220.00</td>
+                                <td>1,000.00</td>
+                              </tr>
+                              <tr>
+                                <td>3</td>
+                                <td>22/Ago/2024</td>
+                                <td>$742.00</td>
+                                <td>$500.00</td>
+                                <td>$242.00</td>
+                                <td>500.00</td>
+                              </tr>
+                              <tr>
+                                <td>4</td>
+                                <td>06/Sep/2024</td>
+                                <td>$766.20</td>
+                                <td>$500.00</td>
+                                <td>$266.20</td>
+                                <td>$0.00</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                      <hr />
+                    </div>
+                  </div>
+
+                  <div class="card-footer">
+                    <button type="submit" class="btn btn-primary float-right">
+                      Crear Prestamo
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+
+            <!--=====================================
+      LA TABLA DE PRESTATARIOS
+      ======================================-->
+
+            <div class="col-lg-7 hidden-md hidden-sm hidden-xs">
+              <div class="card card-warning card-outline">
+                <div class="card-body">
+                  <table
+                    class="table table-bordered table-striped dt-responsive tablaProductos"
+                    width="100%"
+                  >
+                    <thead>
+                      <tr>
+                        <th style="width: 10px">#</th>
+                        <th>Nombre</th>
+                        <th>Foto</th>
+                        <th>ID</th>
+                        <th>Credito</th>
+                        <th>Deuda Actual</th>
+                        <th>Fecha</th>
+                        <th>Acciones</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>1</td>
+                        <td>Brayan Emanuel Sanchez Ramirez</td>
+                        <td>
+                          <img
+                            class="img-circle"
+                            src="dist/img/avatar.png"
+                            width="60px"
+                          />
+                        </td>
+                        <td>12345678</td>
+                        <td>
+                          <button class="btn btn-xs btn-danger">Activo</button>
+                        </td>
+                        <td>MX$12,400.00</td>
+                        <td>24-06-2024 12:12:12</td>
+                        <td>
+                          <div class="btn-group">
+                            <!-- <button
+                          class="btn btn-success"
+                          data-toggle="modal"
+                          data-target="#modalEditarPrestatario"
+                        >
+                          <i class="fas fa-hand-holding-usd"></i>
+                        </button> -->
+                            <button class="btn btn-primary disabled">
+                              Asignar Prestamo
+                            </button>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>2</td>
+                        <td>Jazmin Montserrath Santiago Jilote</td>
+                        <td>
+                          <img
+                            class="img-circle"
+                            src="dist/img/avatar3.png"
+                            width="60px"
+                          />
+                        </td>
+                        <td>12345678</td>
+                        <td>
+                          <button class="btn btn-xs btn-success">
+                            Inactivo
+                          </button>
+                        </td>
+                        <td>MX$0.00</td>
+                        <td>24-06-2024 12:12:12</td>
+                        <td>
+                          <div class="btn-group">
+                            <!-- <button
+                          class="btn btn-info"
+                          data-toggle="modal"
+                          data-target="#modalEditarPrestatario"
+                        >
+                          <i class="fas fa-cash-register"></i>
+                        </button> -->
+                            <button class="btn btn-primary">
+                              Asignar Prestamo
+                            </button>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
         <!-- /.content -->
       </div>
       <!-- /.content-wrapper -->
@@ -402,5 +925,15 @@
     <script src="dist/js/adminlte.min.js"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="/dist/js/demo.js"></script>
+    <!-- DataTables  & Plugins -->
+    <script src="plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+    <script src="plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+    <script src="plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
+    <script src="plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+
+    <script src="js/plantilla.js"></script>
+    <script src="js/gestosPrestatarios.js"></script>
   </body>
 </html>

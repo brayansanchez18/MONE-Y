@@ -247,7 +247,7 @@
               </li>
 
               <li class="nav-item">
-                <a href="presetamos.html" class="nav-link">
+                <a href="prestamos.html" class="nav-link">
                   <i class="nav-icon fas fa-hand-holding-usd"></i>
                   <p>Prestamos</p>
                 </a>
@@ -268,7 +268,7 @@
               </li>
 
               <li class="nav-item">
-                <a href="users.html" class="nav-link">
+                <a href="caja.html" class="nav-link">
                   <i class="nav-icon fas fa-piggy-bank"></i>
                   <p>Caja</p>
                 </a>
@@ -362,10 +362,12 @@
                     <th>ID</th>
                     <th>Sexo</th>
                     <th>Direccion</th>
+                    <th>Fecha de naciomiento</th>
                     <th>Telefono</th>
                     <th>Correo</th>
+                    <th>Contacto</th>
                     <th>Credito</th>
-                    <th>Deuda</th>
+                    <th>Deuda Actual</th>
                     <th>Fecha</th>
                     <th>Acciones</th>
                   </tr>
@@ -389,8 +391,10 @@
                       C. Chapultepec #10 INT C, Col. San Jeronimo Chicahualco
                       C.P. 52170, Metepec, Mexico
                     </td>
+                    <td>1998-09-05</td>
                     <td>7299145194</td>
                     <td>brayan.sanchez.contacto@gmail.com</td>
+                    <td>Lorem Ipsum (7295924900)</td>
                     <td>
                       <button class="btn btn-xs btn-danger">Activo</button>
                     </td>
@@ -448,8 +452,10 @@
                       C. Hermegildo Galeana #409, Barr. La Concepcion C.P.
                       52105, San Mateo Atenco, Mexico
                     </td>
+                    <td>1980-11-02</td>
                     <td>7299145194</td>
                     <td>brayan.sanchez.contacto@gmail.com</td>
+                    <td>Lorem Ipsum (7295924900)</td>
                     <td>
                       <button class="btn btn-xs btn-success">Inactivo</button>
                     </td>
@@ -464,13 +470,11 @@
                         >
                           <i class="fas fa-cash-register"></i>
                         </button> -->
-                        <button
-                          class="btn btn-success"
-                          data-toggle="modal"
-                          data-target="#modalEditarPrestatario"
-                        >
-                          <i class="fas fa-hand-holding-usd"></i>
-                        </button>
+                        <a href="prestamos.html">
+                          <button class="btn btn-success">
+                            <i class="fas fa-hand-holding-usd"></i>
+                          </button>
+                        </a>
                         <button
                           class="btn btn-primary"
                           data-toggle="modal"
@@ -513,7 +517,7 @@
         role="dialog"
         aria-hidden="true"
       >
-        <div class="modal-dialog" role="document">
+        <div class="modal-dialog modal-lg" role="document">
           <div class="modal-content">
             <form role="form" method="post" enctype="multipart/form-data">
               <div class="modal-header">
@@ -576,35 +580,37 @@
                   </select>
                 </div>
 
-                <div class="input-group mb-2">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text" id="basic-addon1"
-                      ><i class="fa fa-id-card" aria-hidden="true"></i>
-                    </span>
+                <div class="row">
+                  <div class="input-group mb-2 col-12 col-md-6">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="basic-addon1"
+                        ><i class="fa fa-id-card" aria-hidden="true"></i>
+                      </span>
+                    </div>
+                    <input
+                      type="email"
+                      class="form-control input-lg"
+                      name="nuevoEmail"
+                      placeholder="ID del Prestatario"
+                      id="nuevoEmail"
+                      required
+                    />
                   </div>
-                  <input
-                    type="email"
-                    class="form-control input-lg"
-                    name="nuevoEmail"
-                    placeholder="ID del Prestatario"
-                    id="nuevoEmail"
-                    required
-                  />
-                </div>
 
-                <div class="input-group mb-2">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text" id="basic-addon1"
-                      ><i class="fa fa-venus-mars" aria-hidden="true"></i>
-                    </span>
+                  <div class="input-group mb-2 col-12 col-md-6">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="basic-addon1"
+                        ><i class="fa fa-venus-mars" aria-hidden="true"></i>
+                      </span>
+                    </div>
+                    <select class="form-control input-lg" name="nuevoPerfil">
+                      <option value="">Sexo</option>
+                      <option value="Masculino">Masculino</option>
+                      <option value="Femenino">Femenino</option>
+                      <option value="Otro">Otro</option>
+                      <option value="Sin Espesificar">Sin Espesificar</option>
+                    </select>
                   </div>
-                  <select class="form-control input-lg" name="nuevoPerfil">
-                    <option value="">Sexo</option>
-                    <option value="Masculino">Masculino</option>
-                    <option value="Femenino">Femenino</option>
-                    <option value="Otro">Otro</option>
-                    <option value="Sin Espesificar">Sin Espesificar</option>
-                  </select>
                 </div>
 
                 <div class="input-group mb-2">
@@ -618,6 +624,22 @@
                     class="form-control input-lg"
                     name="nuevoEmail"
                     placeholder="Direccion"
+                    id="nuevoEmail"
+                    required
+                  />
+                </div>
+
+                <div class="input-group mb-2">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1"
+                      ><i class="fa fa-birthday-cake" aria-hidden="true"></i>
+                    </span>
+                  </div>
+                  <input
+                    type="email"
+                    class="form-control input-lg"
+                    name="nuevoEmail"
+                    placeholder="Fecha de Nacimiento"
                     id="nuevoEmail"
                     required
                   />
@@ -669,6 +691,48 @@
                     width="200px"
                   />
                 </div>
+
+                <div class="mb-2">
+                  <div class="panel">SUBIR DOCUMENTOS</div>
+                  <input
+                    type="file"
+                    class="form-control input-lg nuevaFoto"
+                    name="nuevaFoto"
+                  />
+                  <p class="help-block">Peso máximo del documento 4MB</p>
+                </div>
+
+                <div class="input-group mb-2">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1"
+                      ><i class="fa fa-address-book" aria-hidden="true"></i
+                    ></span>
+                  </div>
+                  <input
+                    type="email"
+                    class="form-control input-lg"
+                    name="nuevoEmail"
+                    placeholder="Nombre persona de Contacto"
+                    id="nuevoEmail"
+                    required
+                  />
+                </div>
+
+                <div class="input-group mb-2">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">
+                      <i class="fa fa-phone-square" aria-hidden="true"></i>
+                    </span>
+                  </div>
+                  <input
+                    type="email"
+                    class="form-control input-lg"
+                    name="nuevoEmail"
+                    placeholder="Telefono persona de Contacto"
+                    id="nuevoEmail"
+                    required
+                  />
+                </div>
               </div>
               <div class="modal-footer">
                 <button
@@ -700,12 +764,12 @@
         role="dialog"
         aria-hidden="true"
       >
-        <div class="modal-dialog" role="document">
+        <div class="modal-dialog modal-lg" role="document">
           <div class="modal-content">
             <form role="form" method="post" enctype="multipart/form-data">
               <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">
-                  Editar Prestatario
+                  Agregar Prestatario
                 </h5>
                 <button
                   type="button"
@@ -763,35 +827,37 @@
                   </select>
                 </div>
 
-                <div class="input-group mb-2">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text" id="basic-addon1"
-                      ><i class="fa fa-id-card" aria-hidden="true"></i>
-                    </span>
+                <div class="row">
+                  <div class="input-group mb-2 col-12 col-md-6">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="basic-addon1"
+                        ><i class="fa fa-id-card" aria-hidden="true"></i>
+                      </span>
+                    </div>
+                    <input
+                      type="email"
+                      class="form-control input-lg"
+                      name="nuevoEmail"
+                      placeholder="ID del Prestatario"
+                      id="nuevoEmail"
+                      required
+                    />
                   </div>
-                  <input
-                    type="email"
-                    class="form-control input-lg"
-                    name="nuevoEmail"
-                    placeholder="ID del Prestatario"
-                    id="nuevoEmail"
-                    required
-                  />
-                </div>
 
-                <div class="input-group mb-2">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text" id="basic-addon1"
-                      ><i class="fa fa-venus-mars" aria-hidden="true"></i>
-                    </span>
+                  <div class="input-group mb-2 col-12 col-md-6">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="basic-addon1"
+                        ><i class="fa fa-venus-mars" aria-hidden="true"></i>
+                      </span>
+                    </div>
+                    <select class="form-control input-lg" name="nuevoPerfil">
+                      <option value="">Sexo</option>
+                      <option value="Masculino">Masculino</option>
+                      <option value="Femenino">Femenino</option>
+                      <option value="Otro">Otro</option>
+                      <option value="Sin Espesificar">Sin Espesificar</option>
+                    </select>
                   </div>
-                  <select class="form-control input-lg" name="nuevoPerfil">
-                    <option value="">Sexo</option>
-                    <option value="Masculino">Masculino</option>
-                    <option value="Femenino">Femenino</option>
-                    <option value="Otro">Otro</option>
-                    <option value="Sin Espesificar">Sin Espesificar</option>
-                  </select>
                 </div>
 
                 <div class="input-group mb-2">
@@ -805,6 +871,22 @@
                     class="form-control input-lg"
                     name="nuevoEmail"
                     placeholder="Direccion"
+                    id="nuevoEmail"
+                    required
+                  />
+                </div>
+
+                <div class="input-group mb-2">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1"
+                      ><i class="fa fa-birthday-cake" aria-hidden="true"></i>
+                    </span>
+                  </div>
+                  <input
+                    type="email"
+                    class="form-control input-lg"
+                    name="nuevoEmail"
+                    placeholder="Fecha de Nacimiento"
                     id="nuevoEmail"
                     required
                   />
@@ -856,6 +938,48 @@
                     width="200px"
                   />
                 </div>
+
+                <div class="mb-2">
+                  <div class="panel">SUBIR DOCUMENTOS</div>
+                  <input
+                    type="file"
+                    class="form-control input-lg nuevaFoto"
+                    name="nuevaFoto"
+                  />
+                  <p class="help-block">Peso máximo del documento 4MB</p>
+                </div>
+
+                <div class="input-group mb-2">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1"
+                      ><i class="fa fa-address-book" aria-hidden="true"></i
+                    ></span>
+                  </div>
+                  <input
+                    type="email"
+                    class="form-control input-lg"
+                    name="nuevoEmail"
+                    placeholder="Nombre persona de Contacto"
+                    id="nuevoEmail"
+                    required
+                  />
+                </div>
+
+                <div class="input-group mb-2">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">
+                      <i class="fa fa-phone-square" aria-hidden="true"></i>
+                    </span>
+                  </div>
+                  <input
+                    type="email"
+                    class="form-control input-lg"
+                    name="nuevoEmail"
+                    placeholder="Telefono persona de Contacto"
+                    id="nuevoEmail"
+                    required
+                  />
+                </div>
               </div>
               <div class="modal-footer">
                 <button
@@ -866,7 +990,7 @@
                   Cerrar
                 </button>
                 <button type="submit" class="btn btn-primary">
-                  Editar Prestatario
+                  Crear Prestatario
                 </button>
               </div>
             </form>
